@@ -1,0 +1,86 @@
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+#timer {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: white;
+    z-index: 100;
+}
+#health-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: white;
+    z-index: 100;
+}
+.heart-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+
+/* Potion Instructions - placed above the block instructions */
+#potion-instructions {
+  position: absolute;
+  bottom: 50px;   /* Adjust spacing as needed */
+  left: 10px;
+  font-size: 24px;
+  color: white;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+/* Block Instructions */
+#block-instructions {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 24px;
+  color: white;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.block-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* Gun at bottom center */
+#gun-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 101;
+    pointer-events: none;
+}
+#gun {
+    width: 300%;
+    height: auto;
+    display: block;
+}
+
+/* Reload Indicator at bottom right */
+#reload-indicator {
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    font-size: 100px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: white;
+    z-index: 102;
+}

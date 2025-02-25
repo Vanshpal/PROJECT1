@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My A-Frame Speed Run Game</title>
+    <!-- A-Frame and Extras -->
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.4/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.5.0/dist/aframe-environment-component.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="kinema.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Timer and Health Container -->
+    <div id="timer">00:00</div>
+    <div id="health-container">
+      <div id="player-health">
+        Player Health: <span id="player-health-bar"></span>
+      </div>
+      <div id="monster-health">
+        Monster Health: <span id="monster-health-bar">██████████</span>
+      </div>
+      <!-- Dragon health (hidden initially) -->
+      <div id="dragon-health" style="display: none;">
+        Dragon Health: <span id="dragon-health-bar">██████████</span>
+      </div>
+    </div>
+
+    <!-- A-Frame Scene -->
+    <a-scene physics="debug: false">
+      <!-- Environment -->
+      <a-entity environment="preset: forest; ground: flat; dressing: trees"></a-entity>
+      
+      <!-- Camera -->
+      <a-camera fov="120" position="0 2 0" 
+                wasd-controls="acceleration: 50" 
+                kinema-body></a-camera>
+      
+      <!-- Warrior Enemy -->
+      <a-entity id="monster"
+                gltf-model="Warrior.glb"
+                scale="3 3 3"
+                animation-mixer="clip: [Action Stash].002; loop: repeat"
+                position="0 0 -10"
+                dynamic-body>
+      </a-entity>
+    </a-scene>
+
+    <!-- Game Over Screen -->
+    <div id="game-over" style="display:none; position:absolute; 
+                               top:50%; left:50%; 
+                               transform: translate(-50%, -50%); 
+                               text-align: center; 
+                               background: white; 
+                               padding: 20px; 
+                               border-radius: 10px;">
+      <h1>Game Over</h1>
+      <button onclick="restartGame()">Try Again</button>
+    </div>
+    
+    <!-- Potion Instructions (image + text) -->
+    <div id="potion-instructions">
+      <img src="potion.png" alt="Potion" class="block-icon"> E to Heal
+    </div>
+
+    <!-- Block Instructions (image + text) -->
+    <div id="block-instructions">
+      <img src="right click.webp" alt="Right Click" class="block-icon"> Block
+    </div>
+    
+    <!-- Gun Image covering the bottom of the screen -->
+    <div id="gun-container">
+      <img src="gun.jpg" alt="Gun" id="gun">
+    </div>
+    
+    <!-- Reload Indicator (added at bottom right) -->
+    <div id="reload-indicator">20/∞</div>
+  </body>
+</html>
