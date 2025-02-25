@@ -2,7 +2,7 @@
 let scene, camera, monster, timerElement;
 let startTime;
 let playerHealth = 3;
-let monsterHealth = 60; // Warrior dies after enough hits
+let monsterHealth = 15; // Warrior dies after enough hits
 let isGameOver = false;
 let isBlocking = false;
 let bushes = [];
@@ -29,7 +29,7 @@ let firingIntervalId = null;
 // Dragon-related
 let dragonSpawned = false;
 let dragon = null;
-let dragonHealth = 80;
+let dragonHealth = 15;
 let dragonDamageDisabled = false;
 
 // Red zone damage
