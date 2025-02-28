@@ -46,11 +46,11 @@ let hitAudio = new Audio("Hit.mp3");  // Hit sound for when damage is taken
 let reloadAudio = new Audio("Reload.mp3"); // Reload sound during cooldown
 let shieldHoldAudio = new Audio("Shield Hold.mp3"); // Sound while shield is held
 
-// New: Ammo count and reloading flag for the gun (level 1)
+// Ammo count and reloading flag for the gun (level 1)
 let reloadAmmo = 20;
 let reloading = false;
 
-// New: Shield variables – allow blocking (shield) for 5 seconds then 1 second cooldown
+// Shield variables – allow blocking (shield) for 5 seconds then 1 second cooldown
 let shieldTimeout = null;
 let shieldCooldownTimeout = null;
 let shieldOnCooldown = false;
@@ -634,7 +634,7 @@ function loop() {
     }
   }
   
-  // --- Dragon (Level 2 enemy) behavior with explicit attack state and 0.5-second movement lock cooldown ---
+  // --- Dragon (Level 2 enemy) behavior with explicit attack state and 0.5-second movement lock cooldown wtvr
   if (dragon) {
     const playerPos = camera.object3D.position;
     const dragonPos = dragon.object3D.position;
